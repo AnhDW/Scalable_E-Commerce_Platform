@@ -1,0 +1,4 @@
+{
+  "input": "http://localhost:5001/openapi/v1.json",
+  "output": "src/app/services/auth-services"
+}
