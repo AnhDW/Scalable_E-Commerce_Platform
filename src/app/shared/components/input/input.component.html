@@ -1,0 +1,8 @@
+<div class="form-group">
+    <label [for]="id" class="form-label" *ngIf="label">{{ label }}</label>
+    <input [id]="id" [type]="type" [placeholder]="placeholder" [value]="value" [disabled]="disabled"
+        (input)="onInput($event)" (blur)="onTouched()" class="form-control" [class.is-invalid]="!!error" />
+    <div class="invalid-feedback" *ngIf="error">
+        {{ error }}
+    </div>
+</div>

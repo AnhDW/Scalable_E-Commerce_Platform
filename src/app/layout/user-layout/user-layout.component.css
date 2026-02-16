@@ -1,0 +1,29 @@
+.user-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.user-header {
+    background-color: #ffffff;
+    color: #333;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #fafafa;
+}
+
+.user-footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}

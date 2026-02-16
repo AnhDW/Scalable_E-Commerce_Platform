@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ToastComponent } from './shared/components/toast/toast.component';
 import { apiUsersGet } from './services/auth-services/functions';
 import { HttpClient } from '@angular/common/http';
 import { ApiConfiguration } from './services/auth-services/api-configuration';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ToastComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -23,7 +24,7 @@ export class AppComponent implements OnInit {
     this.getUsers(params);
   }
 
-  getUsers(params:any) {
+  getUsers(params: any) {
     apiUsersGet(this.http, this.apiConfig.rootUrl, params).subscribe(res => {
       const data = JSON.parse(res.body as unknown as string);
       console.log(data.result);

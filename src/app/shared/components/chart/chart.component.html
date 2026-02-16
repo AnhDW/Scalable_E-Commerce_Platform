@@ -1,0 +1,36 @@
+<div class="chart-container">
+    <h3 *ngIf="title" class="chart-title">{{ title }}</h3>
+    <svg [attr.width]="width" [attr.height]="height" class="chart-svg">
+        <!-- Grid Lines -->
+        <g class="grid">
+            <line *ngFor="let grid of gridLines" x1="40" [attr.y1]="(height - 20) - (grid * (height - 40))"
+                [attr.x2]="width" [attr.y2]="(height - 20) - (grid * (height - 40))" stroke="#e2e8f0"
+                stroke-dasharray="4,4" />
+        </g>
+
+        <!-- Axes -->
+        <line x1="40" [attr.y1]="height - 20" [attr.x2]="width" [attr.y2]="height - 20" stroke="#cbd5e1" />
+        <!-- X Axis -->
+        <line x1="40" y1="20" x2="40" [attr.y2]="height - 20" stroke="#cbd5e1" /> <!-- Y Axis -->
+
+        <!-- Bars -->
+        <g *ngIf="type === 'bar'">
+            <rect *ngFor="let bar of bars" [attr.x]="bar.x" [attr.y]="bar.y" [attr.width]="bar.width"
+                [attr.height]="bar.height" [attr.fill]="bar.color" class="bar">
+                <title>{{ bar.label }}: {{ bar.value }}</title>
+            </rect>
+
+            <!-- Labels -->
+            <text *ngFor="let bar of bars" [attr.x]="bar.x + bar.width / 2" [attr.y]="height - 5" text-anchor="middle"
+                font-size="10" fill="#64748b">
+                {{ bar.label }}
+            </text>
+
+            <!-- Values -->
+            <text *ngFor="let bar of bars" [attr.x]="bar.x + bar.width / 2" [attr.y]="bar.y - 5" text-anchor="middle"
+                font-size="10" fill="#334155">
+                {{ bar.value }}
+            </text>
+        </g>
+    </svg>
+</div>

@@ -1,0 +1,6 @@
+<div class="avatar avatar-{{size}} avatar-{{shape}}" [title]="alt">
+    <img *ngIf="src && showImage; else fallback" [src]="src" [alt]="alt" (error)="handleError()" />
+    <ng-template #fallback>
+        <span class="initials">{{ displayInitials || '?' }}</span>
+    </ng-template>
+</div>

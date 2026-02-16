@@ -1,0 +1,29 @@
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.chart-title {
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.chart-svg {
+    overflow: visible;
+}
+
+.bar {
+    transition: height 0.3s ease-in-out, y 0.3s ease-in-out;
+}
+
+.bar:hover {
+    opacity: 0.8;
+}

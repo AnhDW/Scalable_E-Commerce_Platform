@@ -1,0 +1,12 @@
+<div class="image-container" [style.width]="width" [style.height]="height">
+    <div *ngIf="isLoading" class="loading-placeholder">
+        <div class="spinner"></div>
+    </div>
+
+    <div *ngIf="hasError" class="error-placeholder">
+        <span>⚠️ Image not found</span>
+    </div>
+
+    <img [src]="src" [alt]="alt" [style.object-fit]="objectFit" (load)="onLoad()" (error)="onError()"
+        [class.hidden]="isLoading || hasError" loading="lazy" />
+</div>

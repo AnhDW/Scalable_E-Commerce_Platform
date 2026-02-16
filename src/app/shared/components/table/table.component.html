@@ -1,0 +1,23 @@
+<div class="table-container">
+    <table class="table" [class.table-striped]="striped" [class.table-hover]="hover">
+        <thead>
+            <tr>
+                <th *ngFor="let col of columns">
+                    {{ col.label }}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of data" (click)="onRowClick(row)">
+                <td *ngFor="let col of columns">
+                    {{ row[col.key] }}
+                </td>
+            </tr>
+            <tr *ngIf="data.length === 0">
+                <td [attr.colspan]="columns.length" class="no-data">
+                    No data available
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

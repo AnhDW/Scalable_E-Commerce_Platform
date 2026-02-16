@@ -1,0 +1,28 @@
+.business-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.business-header {
+    background-color: #2980b9;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.business-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f0f2f5;
+}
+
+.business-footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}

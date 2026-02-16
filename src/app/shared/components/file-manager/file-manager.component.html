@@ -1,0 +1,20 @@
+<div class="file-manager">
+    <div class="fm-header">
+        <div class="breadcrumb">{{ currentPath }}</div>
+        <div class="actions">
+            <app-button size="sm" variant="primary" (onClick)="onUpload()">
+                <span>⬆️</span> Upload
+            </app-button>
+        </div>
+    </div>
+
+    <div class="fm-body">
+        <div class="file-grid">
+            <div class="file-item" *ngFor="let file of files" (click)="onFileClick(file)" [title]="file.name">
+                <div class="file-icon">{{ file.icon }}</div>
+                <div class="file-name">{{ file.name }}</div>
+                <div class="file-info" *ngIf="file.type === 'file'">{{ file.size }}</div>
+            </div>
+        </div>
+    </div>
+</div>

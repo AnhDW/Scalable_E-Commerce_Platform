@@ -1,0 +1,7 @@
+<div *ngIf="visible" class="alert alert-{{type}}">
+    <div class="alert-icon">{{ iconSymbol }}</div>
+    <div class="alert-content">
+        <ng-content></ng-content>
+    </div>
+    <button *ngIf="dismissible" class="close-btn" (click)="onDismiss()">×</button>
+</div>

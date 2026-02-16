@@ -1,0 +1,140 @@
+<div class="showcase-container">
+    <h1>Component Showcase</h1>
+    <p class="intro">A gallery of shared UI components available in the application.</p>
+
+    <div class="showcase-section">
+        <h2>Buttons</h2>
+        <div class="component-group">
+            <app-button variant="primary" (onClick)="onButtonClick($event)">Primary</app-button>
+            <app-button variant="secondary">Secondary</app-button>
+            <app-button variant="danger">Danger</app-button>
+            <app-button variant="outline">Outline</app-button>
+            <app-button variant="primary" [disabled]="true">Disabled</app-button>
+        </div>
+        <div class="component-group">
+            <app-button size="sm">Small</app-button>
+            <app-button size="md">Medium</app-button>
+            <app-button size="lg">Large</app-button>
+        </div>
+    </div>
+
+    <div class="showcase-section">
+        <h2>Avatars</h2>
+        <div class="component-group">
+            <app-avatar initials="JD" size="sm"></app-avatar>
+            <app-avatar initials="JS" size="md" shape="rounded"></app-avatar>
+            <app-avatar initials="BJ" size="lg" shape="square"></app-avatar>
+            <app-avatar initials="XY" size="xl"></app-avatar>
+        </div>
+    </div>
+
+    <div class="showcase-section">
+        <h2>Inputs & Forms</h2>
+        <div class="component-display">
+            <app-input label="Username" placeholder="Enter your username" [(ngModel)]="inputValue">
+            </app-input>
+            <p>Bound Value: {{ inputValue }}</p>
+
+            <app-input label="Email" type="email" placeholder="Enter email" error="Invalid email address">
+            </app-input>
+        </div>
+    </div>
+
+    <div class="showcase-section">
+        <h2>Cards</h2>
+        <div class="component-display grid-2">
+            <app-card title="Card Title" subtitle="Card Subtitle">
+                <p>This is the body of the card. It can contain any content.</p>
+                <button footer class="btn-link">Action</button>
+            </app-card>
+
+            <app-card title="Simple Card">
+                <p>A simple card without subtitle or footer actions.</p>
+            </app-card>
+        </div>
+    </div>
+
+    <div class="showcase-section">
+        <h2>Tables</h2>
+        <div class="component-display">
+            <app-table [columns]="tableColumns" [data]="tableData" [striped]="true" (rowClick)="onRowClick($event)">
+            </app-table>
+        </div>
+    </div>
+
+    <div class="showcase-section">
+        <h2>Charts</h2>
+        <div class="component-display">
+            <app-chart title="Monthly Sales" [data]="barChartData" [width]="600" [height]="300">
+            </app-chart>
+        </div>
+    </div>
+
+    <div class="showcase-section">
+        <h2>Tabs</h2>
+        <div class="component-display">
+            <app-tabs>
+                <app-tab title="First Tab">
+                    <h3>Content 1</h3>
+                    <p>This is the content of the first tab.</p>
+                </app-tab>
+                <app-tab title="Second Tab">
+                    <h3>Content 2</h3>
+                    <p>This is the content of the second tab.</p>
+                </app-tab>
+                <app-tab title="Third Tab">
+                    <h3>Content 3</h3>
+                    <p>This is the content of the third tab.</p>
+                </app-tab>
+            </app-tabs>
+        </div>
+    </div>
+
+    <div class="showcase-section">
+        <h2>File Manager</h2>
+        <div class="component-display">
+            <app-file-manager></app-file-manager>
+        </div>
+    </div>
+
+    <div class="showcase-section">
+        <h2>Images</h2>
+        <div class="component-display grid-2">
+            <app-image src="https://via.placeholder.com/300x200" alt="Placeholder Image"></app-image>
+            <app-image src="invalid-url.jpg" alt="Broken Image"></app-image>
+        </div>
+    </div>
+
+    <div class="showcase-section">
+        <h2>Alerts</h2>
+        <div class="component-display">
+            <app-alert type="success">Operation successful!</app-alert>
+            <app-alert type="warning">Warning: Check your data.</app-alert>
+            <app-alert type="error">Error: Something went wrong.</app-alert>
+            <app-alert type="info">Info: System update available.</app-alert>
+            <app-alert type="info" [dismissible]="true">Dismissible alert.</app-alert>
+        </div>
+    </div>
+
+    <div class="showcase-section">
+        <h2>Modals & Toasts</h2>
+        <div class="component-display">
+            <div class="component-group">
+                <app-button (onClick)="openModal()">Open Modal</app-button>
+                <app-button variant="success" (onClick)="showToast('success', 'Success toast!')">Success
+                    Toast</app-button>
+                <app-button variant="danger" (onClick)="showToast('error', 'Error toast!')">Error Toast</app-button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Component -->
+    <app-modal title="Example Modal" [isOpen]="isModalOpen" (onClose)="closeModal()">
+        <p>This is a reusable modal component.</p>
+        <p>It can contain any content.</p>
+        <div footer>
+            <app-button variant="secondary" (onClick)="closeModal()">Cancel</app-button>
+            <app-button variant="primary" (onClick)="saveModal()">Save Changes</app-button>
+        </div>
+    </app-modal>
+</div>

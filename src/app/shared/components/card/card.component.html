@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header" *ngIf="title || subtitle">
+        <h3 class="card-title" *ngIf="title">{{ title }}</h3>
+        <h4 class="card-subtitle" *ngIf="subtitle">{{ subtitle }}</h4>
+    </div>
+    <div class="card-body padding-{{padding}}">
+        <ng-content></ng-content>
+    </div>
+    <div class="card-footer" *ngIf="footerContent.childNodes.length > 0">
+        <ng-content select="[footer]"></ng-content>
+    </div>
+</div>
+
+<!-- Helper to check if footer content exists -->
+<div #footerContent style="display: none">
+    <ng-content select="[footer]"></ng-content>
+</div>

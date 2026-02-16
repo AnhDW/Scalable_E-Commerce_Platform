@@ -1,0 +1,30 @@
+<div class="admin-container">
+    <aside class="sidebar">
+        <div class="brand">
+            <h2>Admin Panel</h2>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a routerLink="/admin/users" routerLinkActive="active">
+                        <span class="icon">👥</span> Users
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/admin/businesses" routerLinkActive="active">
+                        <span class="icon">🏢</span> Businesses
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="content">
+        <header class="topbar">
+            <h1>Dashboard</h1>
+            <div class="user-profile">Admin</div>
+        </header>
+        <div class="page-content">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</div>
