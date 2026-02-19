@@ -32,21 +32,54 @@ export const routes: Routes = [
         path: 'business',
         loadComponent: () => import('./layout/business-layout/business-layout.component').then(m => m.BusinessLayoutComponent),
         children: [
-            // Business routes will go here
+            {
+                path: '',
+                loadComponent: () => import('./features/business-management/my-business-list/my-business-list.component').then(m => m.MyBusinessListComponent)
+            },
+            {
+                path: ':id',
+                loadComponent: () => import('./features/business-management/business-dashboard/business-dashboard.component').then(m => m.BusinessDashboardComponent),
+                children: [
+                    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+                    {
+                        path: 'dashboard',
+                        loadComponent: () => import('./features/business-management/business-overview/business-overview.component').then(m => m.BusinessOverviewComponent)
+                    },
+                    {
+                        path: 'team',
+                        loadComponent: () => import('./features/business-management/business-team/business-team.component').then(m => m.BusinessTeamComponent)
+                    },
+                    {
+                        path: 'settings',
+                        loadComponent: () => import('./features/business-management/business-settings/business-settings.component').then(m => m.BusinessSettingsComponent)
+                    }
+                ]
+            }
         ]
     },
     {
         path: '',
         loadComponent: () => import('./layout/user-layout/user-layout.component').then(m => m.UserLayoutComponent),
         children: [
-            // User/Public routes will go here
+            {
+                path: 'profile',
+                loadComponent: () => import('./features/users/user-profile/user-profile.component').then(m => m.UserProfileComponent)
+            }
         ]
     },
     {
         path: 'auth',
         loadComponent: () => import('./layout/auth-layout/auth-layout.component').then(m => m.AuthLayoutComponent),
         children: [
-            // Auth routes (login, register) will go here
+            {
+                path: 'login',
+                loadComponent: () => import('./features/auth/login/login.component').then(m => m.LoginComponent)
+            },
+            {
+                path: 'register',
+                loadComponent: () => import('./features/auth/register/register.component').then(m => m.RegisterComponent)
+            },
+            { path: '', redirectTo: 'login', pathMatch: 'full' }
         ]
     },
     {

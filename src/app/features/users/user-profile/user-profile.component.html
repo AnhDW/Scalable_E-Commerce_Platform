@@ -1,0 +1,34 @@
+<div class="profile-container" *ngIf="currentUser$ | async as user">
+    <div class="profile-header">
+        <div class="profile-avatar">
+            <img [src]="user.avatarUrl" alt="Profile Picture">
+        </div>
+        <div class="profile-info">
+            <h1>{{ user.name }}</h1>
+            <p class="text-muted">{{ user.email }}</p>
+            <span class="badge" [ngClass]="user.role">{{ user.role | titlecase }}</span>
+        </div>
+        <div class="profile-actions">
+            <app-button variant="outline">Edit Profile</app-button>
+        </div>
+    </div>
+
+    <div class="profile-content">
+        <div class="card">
+            <h3>Account Settings</h3>
+            <div class="setting-item">
+                <span>Email Notifications</span>
+                <input type="checkbox" checked>
+            </div>
+            <div class="setting-item">
+                <span>Two-Factor Authentication</span>
+                <input type="checkbox">
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Recent Activity</h3>
+            <p class="text-muted">No recent activity.</p>
+        </div>
+    </div>
+</div>

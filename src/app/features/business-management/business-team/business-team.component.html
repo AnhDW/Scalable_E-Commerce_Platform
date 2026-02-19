@@ -1,0 +1,55 @@
+<div class="team-container fade-in">
+    <h2>Team Members</h2>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Invite New Member</h4>
+        </div>
+        <div class="card-body">
+            <div class="invite-form">
+                <input type="email" [(ngModel)]="inviteEmail" placeholder="Enter email address" class="form-control">
+                <select [(ngModel)]="inviteRole" class="form-control">
+                    <option value="Member">Member</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Manager">Manager</option>
+                </select>
+                <button (click)="inviteMember()" class="btn btn-primary" [disabled]="!inviteEmail">Invite</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h4>Current Members</h4>
+        </div>
+        <div class="card-body p-0">
+            <div *ngIf="loading" class="p-3 text-center">Loading members...</div>
+
+            <table *ngIf="!loading" class="table table-striped mb-0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let member of members">
+                        <td>{{ member.userName }}</td>
+                        <td>{{ member.email }}</td>
+                        <td>
+                            <span class="badge badge-secondary">{{ member.role }}</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-danger">Remove</button>
+                        </td>
+                    </tr>
+                    <tr *ngIf="members.length === 0">
+                        <td colspan="4" class="text-center">No members found (except you).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

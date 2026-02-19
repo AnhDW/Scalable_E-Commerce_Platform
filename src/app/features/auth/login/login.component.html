@@ -1,0 +1,50 @@
+<div class="auth-header">
+    <h2>Welcome Back</h2>
+    <p>Enter your credentials to access your account</p>
+</div>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="auth-form">
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <div class="input-wrapper">
+            <input type="email" id="email" formControlName="email" class="form-control"
+                [class.is-invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+                placeholder="name@company.com">
+            <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="invalid-feedback">
+                <span *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</span>
+                <span *ngIf="loginForm.get('email')?.errors?.['email']">Please enter a valid email</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="flex justify-between items-center mb-1">
+            <label for="password">Password</label>
+            <a routerLink="/auth/forgot-password" class="text-sm text-primary hover:underline">Forgot password?</a>
+        </div>
+        <div class="input-wrapper">
+            <input type="password" id="password" formControlName="password" class="form-control"
+                [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                placeholder="••••••••">
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                class="invalid-feedback">
+                <span *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</span>
+                <span *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6
+                    characters</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group checkbox-group">
+        <input type="checkbox" id="rememberMe" formControlName="rememberMe">
+        <label for="rememberMe">Remember me for 30 days</label>
+    </div>
+
+    <app-button variant="primary" [block]="true" type="submit" [disabled]="loginForm.invalid || isLoading">
+        {{ isLoading ? 'Signing in...' : 'Sign In' }}
+    </app-button>
+
+    <div class="auth-footer">
+        <p>Don't have an account? <a routerLink="/auth/register">Sign up</a></p>
+    </div>
+</form>

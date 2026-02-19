@@ -1,0 +1,44 @@
+<div class="business-list-container fade-in">
+    <div class="header">
+        <h1>My Businesses</h1>
+        <a routerLink="/admin/businesses/register" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Register New Business
+        </a>
+    </div>
+
+    <div *ngIf="loading" class="loading-state">
+        <div class="spinner"></div>
+        <p>Loading your businesses...</p>
+    </div>
+
+    <div *ngIf="error" class="error-alert">
+        {{ error }}
+        <button (click)="loadBusinesses()" class="btn btn-sm btn-outline-danger">Retry</button>
+    </div>
+
+    <div *ngIf="!loading && !error && businesses.length === 0" class="empty-state">
+        <div class="empty-icon">🏢</div>
+        <h3>No Businesses Found</h3>
+        <p>You haven't registered any businesses yet.</p>
+        <a routerLink="/admin/businesses/register" class="btn btn-primary mt-3">Register Now</a>
+    </div>
+
+    <div *ngIf="!loading && !error && businesses.length > 0" class="business-grid">
+        <div *ngFor="let business of businesses" class="business-card card">
+            <div class="card-body">
+                <h3 class="card-title">{{ business.name }}</h3>
+                <p class="card-text text-muted">{{ business.description || 'No description provided.' }}</p>
+                <div class="card-meta">
+                    <!-- <span class="badge badge-info" *ngIf="business.category">{{ business.category }}</span> -->
+                    <span class="text-secondary"><i class="fas fa-map-marker-alt"></i> {{ business.address || 'Online'
+                        }}</span>
+                </div>
+                <div class="card-actions mt-3">
+                    <a [routerLink]="['/business', business.id]" class="btn btn-outline-primary btn-block">
+                        Manage Business
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,11 +8,8 @@
 .user-header {
     background-color: #ffffff;
     color: #333;
-    padding: 1rem 2rem;
+    padding: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .user-content {
