@@ -1,0 +1,78 @@
+<div class="store-detail-container">
+    <!-- Store Header Banner -->
+    <div class="store-cover" [style.background]="store.coverImage"></div>
+
+    <div class="store-header-info">
+        <div class="container">
+            <div class="store-profile-wrapper">
+                <div class="store-avatar-large">
+                    {{ store.avatar }}
+                </div>
+                <div class="store-meta">
+                    <h1 class="store-name">{{ store.name }} <span class="verified-badge">✓</span></h1>
+                    <div class="store-stats">
+                        <span class="stat-item"><i class="icon-followers"></i> {{ store.followers | number }} người theo
+                            dõi</span>
+                        <span class="stat-item"><i class="icon-star"></i> {{ store.rating }}/5 đánh giá</span>
+                        <span class="stat-item"><i class="icon-products"></i> {{ store.productsCount }} Sản phẩm</span>
+                    </div>
+                </div>
+                <div class="store-actions">
+                    <button class="btn-follow">+ THEO DÕI</button>
+                    <button class="btn-chat">💬 CHAT NGAY</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container store-body">
+        <div class="store-sidebar">
+            <div class="sidebar-card">
+                <h3>Giới thiệu cửa hàng</h3>
+                <p>{{ store.description }}</p>
+                <hr>
+                <ul class="store-details-list">
+                    <li><strong>Tham gia:</strong> {{ store.joinedDate }}</li>
+                    <li><strong>Tỉ lệ phản hồi chat:</strong> 98%</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>Danh mục của Shop</h3>
+                <ul class="category-list">
+                    <li><a href="#">Tất cả sản phẩm ({{ store.productsCount }})</a></li>
+                    <li><a href="#">Laptop & Linh kiện (120)</a></li>
+                    <li><a href="#">Điện thoại & Phụ kiện (85)</a></li>
+                    <li><a href="#">Thiết bị âm thanh (40)</a></li>
+                    <li><a href="#">Khuyến mãi hot (20)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="store-main-content">
+            <div class="filter-bar">
+                <span>Sắp xếp theo:</span>
+                <button class="filter-btn active">Phổ biến</button>
+                <button class="filter-btn">Bán chạy</button>
+                <button class="filter-btn">Hàng mới</button>
+                <button class="filter-btn">Giá <span class="arrow-down">↓</span></button>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card" *ngFor="let product of products" routerLink="/product/1">
+                    <div class="product-image" [style.background]="product.img">
+                        <span *ngIf="product.isHot" class="badge badge-hot">HOT</span>
+                        <span *ngIf="product.discount" class="badge badge-sale">-{{ product.discount }}%</span>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">{{ product.title }}</h4>
+                        <div class="product-price">
+                            <span class="current-price">{{ product.price | number }}đ</span>
+                            <span *ngIf="product.oldPrice" class="old-price">{{ product.oldPrice | number }}đ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

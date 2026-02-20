@@ -1,0 +1,240 @@
+<div class="mock-layout-container">
+    <!-- Categories Slider -->
+    <section class="mock-section categories-section">
+        <div class="section-header">
+            <h3 class="section-title">Danh mục nổi bật</h3>
+            <a href="#" class="view-all">Xem tất cả</a>
+        </div>
+        <div class="categories-slider">
+            <div class="category-card">
+                <div class="category-icon">📱</div>
+                <span class="category-name">Điện thoại</span>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">💻</div>
+                <span class="category-name">Laptop</span>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🎧</div>
+                <span class="category-name">Phụ kiện</span>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">⌚</div>
+                <span class="category-name">Đồng hồ</span>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">📺</div>
+                <span class="category-name">Gia dụng</span>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">👟</div>
+                <span class="category-name">Thời trang</span>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🎮</div>
+                <span class="category-name">Gaming</span>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">📸</div>
+                <span class="category-name">Máy ảnh</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Stores -->
+    <section class="mock-section stores-section">
+        <div class="section-header">
+            <h3 class="section-title">Cửa hàng nổi bật</h3>
+            <a href="#" class="view-all">Khám phá</a>
+        </div>
+        <div class="stores-grid">
+            <div class="store-card" routerLink="/store/1">
+                <div class="store-banner banner-1"></div>
+                <div class="store-info">
+                    <div class="store-avatar">TZ</div>
+                    <div class="store-details">
+                        <h4>TechZone Official</h4>
+                        <p>Sản phẩm công nghệ chính hãng</p>
+                    </div>
+                    <button class="follow-btn" (click)="$event.stopPropagation()">Theo dõi</button>
+                </div>
+            </div>
+            <div class="store-card">
+                <div class="store-banner banner-2"></div>
+                <div class="store-info">
+                    <div class="store-avatar">FH</div>
+                    <div class="store-details">
+                        <h4>Fashion Hub</h4>
+                        <p>Thời trang xu hướng 2024</p>
+                    </div>
+                    <button class="follow-btn outline">Đang theo dõi</button>
+                </div>
+            </div>
+            <div class="store-card">
+                <div class="store-banner banner-3"></div>
+                <div class="store-info">
+                    <div class="store-avatar">HL</div>
+                    <div class="store-details">
+                        <h4>Home & Living</h4>
+                        <p>Không gian sống tiện nghi</p>
+                    </div>
+                    <button class="follow-btn">Theo dõi</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="mock-section products-section">
+        <div class="section-header">
+            <h3 class="section-title">Sản phẩm bán chạy</h3>
+            <a href="#" class="view-all">Xem thêm</a>
+        </div>
+        <div class="products-grid">
+            <div class="product-card" routerLink="/product/1">
+                <div class="product-image mock-img-1">
+                    <span class="badge badge-hot">HOT</span>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Tai nghe Bluetooth Sony WH-1000XM5 Chống ồn chủ động đỉnh cao</h4>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="reviews">(124)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">6.990.000đ</span>
+                        <span class="old-price">7.990.000đ</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" routerLink="/product/1">
+                <div class="product-image mock-img-2">
+                    <span class="badge badge-sale">-15%</span>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">MacBook Air M2 2022 8GB/256GB - Chính hãng VN/A</h4>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="reviews">(89)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">25.490.000đ</span>
+                        <span class="old-price">29.990.000đ</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" routerLink="/product/1">
+                <div class="product-image mock-img-3"></div>
+                <div class="product-info">
+                    <h4 class="product-name">Bàn phím cơ không dây Keychron K2 Pro Nhôm RGB Hotswap</h4>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="reviews">(210)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">2.450.000đ</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" routerLink="/product/1">
+                <div class="product-image mock-img-4">
+                    <span class="badge badge-sale">-29%</span>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Ghế công thái học Ergonomic Office Chair Gọn nhẹ sang trọng</h4>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="reviews">(56)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">3.200.000đ</span>
+                        <span class="old-price">4.500.000đ</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Extra items to show grid -->
+            <div class="product-card">
+                <div class="product-image mock-img-5"></div>
+                <div class="product-info">
+                    <h4 class="product-name">Chuột Không Dây Logitech MX Master 3S</h4>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="reviews">(543)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">2.290.000đ</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image mock-img-6">
+                    <span class="badge badge-hot">HOT</span>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-name">Màn hình Tương tác thông minh LG StanbyME 27 inch</h4>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="reviews">(12)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">22.900.000đ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Introductions -->
+    <section class="mock-section videos-section">
+        <div class="section-header">
+            <h3 class="section-title">Video Khám Phá Sản Phẩm</h3>
+        </div>
+        <div class="videos-grid">
+            <div class="video-card">
+                <div class="video-thumbnail thumb-1">
+                    <div class="play-btn">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                            fill="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                    <span class="video-duration">10:24</span>
+                </div>
+                <div class="video-info">
+                    <h4>Review chi tiết MacBook Air M2 - Có thực sự đáng mua trong năm nay?</h4>
+                    <p>Tech Channel • 1.2M lượt xem</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-thumbnail thumb-2">
+                    <div class="play-btn">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                            fill="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                    <span class="video-duration">08:15</span>
+                </div>
+                <div class="video-info">
+                    <h4>Trải nghiệm ghế công thái học sau 6 tháng sử dụng và cái kết</h4>
+                    <p>Reviewer Zone • 500K lượt xem</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-thumbnail thumb-3">
+                    <div class="play-btn">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                            fill="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                    <span class="video-duration">15:00</span>
+                </div>
+                <div class="video-info">
+                    <h4>Setup góc làm việc 2024 tối giản nhưng xịn xò với top phụ kiện</h4>
+                    <p>Setup Daily • 850K lượt xem</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

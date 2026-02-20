@@ -1,0 +1,115 @@
+<div class="product-detail-page">
+    <div class="container breadcrumbs">
+        <a routerLink="/">Trang chủ</a> >
+        <a href="#">Máy tính & Laptop</a> >
+        <a href="#">Laptop Apple</a> >
+        <span>{{ product.title }}</span>
+    </div>
+
+    <div class="container">
+        <div class="product-main-card">
+            <!-- Media Gallery -->
+            <div class="product-gallery">
+                <div class="main-image" [style.background]="product.images[product.selectedImageIndex]">
+                    <div *ngIf="product.discount" class="discount-badge">-{{ product.discount }}%</div>
+                </div>
+                <div class="thumbnail-list">
+                    <div *ngFor="let img of product.images; let i = index" class="thumbnail"
+                        [class.active]="i === product.selectedImageIndex" [style.background]="img"
+                        (click)="selectImage(i)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-summary">
+                <h1 class="product-title">{{ product.title }}</h1>
+
+                <div class="product-meta">
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">{{ product.rating }}</span>
+                        <a href="#reviews" class="reviews-count">({{ product.reviews }} đánh giá)</a>
+                    </div>
+                    <span class="divider">|</span>
+                    <span class="sold-count">Đã bán {{ product.sold }}</span>
+                </div>
+
+                <div class="price-box">
+                    <span class="current-price">{{ product.price | number }} ₫</span>
+                    <span *ngIf="product.fullPrice" class="full-price">{{ product.fullPrice | number }} ₫</span>
+                </div>
+
+                <div class="product-options">
+                    <div class="option-group">
+                        <span class="option-label">Màu sắc: <strong>{{ product.selectedColor }}</strong></span>
+                        <div class="option-buttons">
+                            <button *ngFor="let color of product.colors" class="opt-btn"
+                                [class.active]="color === product.selectedColor" (click)="selectColor(color)">
+                                {{ color }}
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <span class="option-label">Phiên bản: <strong>{{ product.selectedOption }}</strong></span>
+                        <div class="option-buttons">
+                            <button *ngFor="let opt of product.options" class="opt-btn"
+                                [class.active]="opt === product.selectedOption" (click)="selectOption(opt)">
+                                {{ opt }}
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="quantity-group">
+                        <span class="option-label">Số lượng:</span>
+                        <div class="quantity-control">
+                            <button class="qty-btn" (click)="decreaseQuantity()">-</button>
+                            <input type="number" class="qty-input" [value]="product.quantity" readonly>
+                            <button class="qty-btn" (click)="increaseQuantity()">+</button>
+                        </div>
+                        <span class="stock-info">Sẵn hàng</span>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-add-cart"><i class="icon-cart"></i> Thêm vào giỏ</button>
+                    <button class="btn-buy-now">Mua ngay</button>
+                </div>
+
+                <!-- Store mini card -->
+                <div class="mini-store-card" routerLink="/store/1">
+                    <div class="store-avataar">{{ product.store.avatar }}</div>
+                    <div class="store-info-text">
+                        <b>{{ product.store.name }} <span class="badge-official">Mall</span></b>
+                        <p>{{ product.store.followers }} Người theo dõi</p>
+                    </div>
+                    <button class="btn-view-store">Xem Shop</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Details and Specs -->
+        <div class="product-details-section">
+            <div class="details-content">
+                <h2>Mô tả sản phẩm</h2>
+                <div class="description-text">
+                    <p *ngFor="let para of product.description.split('\n')">{{ para }}</p>
+                </div>
+            </div>
+
+            <div class="details-specs">
+                <h2>Thông số kỹ thuật</h2>
+                <table class="specs-table">
+                    <tbody>
+                        <tr *ngFor="let spec of product.specs">
+                            <td class="spec-name">{{ spec.name }}</td>
+                            <td class="spec-value">{{ spec.value }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

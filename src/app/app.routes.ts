@@ -62,8 +62,20 @@ export const routes: Routes = [
         loadComponent: () => import('./layout/user-layout/user-layout.component').then(m => m.UserLayoutComponent),
         children: [
             {
+                path: '',
+                loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent)
+            },
+            {
                 path: 'profile',
                 loadComponent: () => import('./features/users/user-profile/user-profile.component').then(m => m.UserProfileComponent)
+            },
+            {
+                path: 'store/:id',
+                loadComponent: () => import('./features/store/store-detail/store-detail.component').then(m => m.StoreDetailComponent)
+            },
+            {
+                path: 'product/:id',
+                loadComponent: () => import('./features/product/product-detail/product-detail.component').then(m => m.ProductDetailComponent)
             }
         ]
     },
