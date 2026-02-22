@@ -417,6 +417,8 @@
 @media (max-width: 900px) {
     .product-main-card {
         flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
     }
 
     .product-gallery {
@@ -425,7 +427,118 @@
         margin: 0 auto;
     }
 
+    .thumbnail-list {
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+
+    .thumbnail {
+        flex: 0 0 calc(20% - 0.6rem);
+        /* ensure they don't shrink too much */
+    }
+
     .product-details-section {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-title {
+        font-size: 1.25rem;
+    }
+
+    .price-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    .current-price {
+        font-size: 1.5rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .breadcrumbs {
+        white-space: nowrap;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+        padding: 0.75rem 0;
+        font-size: 0.8rem;
+    }
+
+    .breadcrumbs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .product-meta {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .quantity-group {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .mini-store-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .btn-view-store {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .details-content,
+    .details-specs {
+        padding: 1rem;
+    }
+
+    .product-details-section h2 {
+        margin: -1rem -1rem 1rem -1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-title {
+        font-size: 1.1rem;
+    }
+
+    .current-price {
+        font-size: 1.25rem;
+    }
+
+    .action-buttons button {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .opt-btn {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .qty-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .qty-input {
+        width: 40px;
+    }
+
+    .thumbnail {
+        flex: 0 0 calc(25% - 0.6rem);
+        /* slight adjustment for smaller screens */
     }
 }

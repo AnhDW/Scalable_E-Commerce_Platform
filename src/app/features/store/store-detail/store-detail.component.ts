@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ProductGridComponent } from '../../../shared/components/product-grid/product-grid.component';
 
 @Component({
     selector: 'app-store-detail',
     standalone: true,
-    imports: [CommonModule, RouterModule],
+    imports: [CommonModule, RouterModule, ProductGridComponent],
     templateUrl: './store-detail.component.html',
     styleUrls: ['./store-detail.component.css']
 })

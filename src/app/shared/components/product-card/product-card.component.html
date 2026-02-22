@@ -1,0 +1,19 @@
+<div class="product-card" [routerLink]="['/product', product?.id || 1]">
+    <div class="product-image" [style.background]="product?.img || ''">
+        <span *ngIf="product?.isHot" class="badge badge-hot">HOT</span>
+        <span *ngIf="product?.discount" class="badge badge-sale">-{{ product.discount }}%</span>
+    </div>
+    <div class="product-info">
+        <h4 class="product-name">{{ product?.title }}</h4>
+
+        <div *ngIf="product?.rating" class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span class="reviews">({{ product.ratingCount || 0 }})</span>
+        </div>
+
+        <div class="product-price">
+            <span class="current-price">{{ product?.price | number }}đ</span>
+            <span *ngIf="product?.oldPrice" class="old-price">{{ product.oldPrice | number }}đ</span>
+        </div>
+    </div>
+</div>

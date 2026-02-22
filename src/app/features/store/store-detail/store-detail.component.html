@@ -58,21 +58,7 @@
                 <button class="filter-btn">Giá <span class="arrow-down">↓</span></button>
             </div>
 
-            <div class="products-grid">
-                <div class="product-card" *ngFor="let product of products" routerLink="/product/1">
-                    <div class="product-image" [style.background]="product.img">
-                        <span *ngIf="product.isHot" class="badge badge-hot">HOT</span>
-                        <span *ngIf="product.discount" class="badge badge-sale">-{{ product.discount }}%</span>
-                    </div>
-                    <div class="product-info">
-                        <h4 class="product-name">{{ product.title }}</h4>
-                        <div class="product-price">
-                            <span class="current-price">{{ product.price | number }}đ</span>
-                            <span *ngIf="product.oldPrice" class="old-price">{{ product.oldPrice | number }}đ</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <app-product-grid [products]="products"></app-product-grid>
         </div>
     </div>
 </div>
